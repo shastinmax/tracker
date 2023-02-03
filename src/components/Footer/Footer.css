@@ -1,0 +1,21 @@
+.wrapper{
+    min-height: 100px;
+    background: linear-gradient(#36b6c2, #c391e5);
+}
+.inner{
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.inner a{
+    display: block;
+    padding: 25px;
+    color: #282c34;
+    font-weight: 600;
+    font-size: 24px;
+}
+.Logo{
+    width: 75px;
+}
