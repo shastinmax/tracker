@@ -42,7 +42,7 @@ export const Header = (props: HeaderProps) => {
     return scrollYProgress.onChange((latest: number) => {
       setScroll(latest);
     });
-  }, []);
+  }, [scrollYProgress]);
 
   return (
     <header>
@@ -62,7 +62,11 @@ export const Header = (props: HeaderProps) => {
 
             <div className={style.registerGroup}>
               {isShow ? (
-                <p>Exit</p>
+                <NavLink onClick={onToggleMenuClick} to={PathNavigation.HOME}>
+                  <Button style={{ width: 100, marginRight: 25 }} variant="contained">
+                    {t('exit')}
+                  </Button>{' '}
+                </NavLink>
               ) : (
                 <>
                   <NavLink onClick={onToggleMenuClick} to={PathNavigation.SING_IN}>

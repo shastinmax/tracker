@@ -1,0 +1,27 @@
+.formLayout {
+    margin-left: 50px;
+}
+
+input.inputName {
+    display: inline;
+    width: 300px;
+}
+
+button[type="submit"].submit {
+    margin: 0 0 0 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 15px;
+    letter-spacing: 5px;
+}
+
+.label {
+    margin-left: 50px;
+}
+
+.error {
+    text-align: left;
+    margin-left: 50px;
+    color: red;
+}
