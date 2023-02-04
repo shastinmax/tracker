@@ -12,7 +12,11 @@ import Hamburger from '../Hamburger/Hamburger';
 import { Context } from '../../hooks/context';
 import { motion, useScroll } from 'framer-motion';
 import { HeaderProps } from './types';
+import { useAppSelector } from '../../hooks/useAppSelectors';
+import { selectShowHeader } from '../../redux/slices/selectors';
+
 export const Header = (props: HeaderProps) => {
+  const isShow = useAppSelector(selectShowHeader);
   const { scrollYProgress } = useScroll();
   const { isActive, setIsActive } = useContext(Context);
   const { theme, toggleTheme } = props;
@@ -57,7 +61,7 @@ export const Header = (props: HeaderProps) => {
             </NavLink>
 
             <div className={style.registerGroup}>
-              {false ? (
+              {isShow ? (
                 <p>Exit</p>
               ) : (
                 <>

@@ -4,6 +4,8 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import Parse from 'parse';
 import { PathNavigation } from '../../enums/Navigation';
 import { useNavigate } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/useAppDispatch';
+import { showHeader } from '../../redux/slices/showHeaderSlice';
 interface IFormInput {
   login: string;
   password: string;
@@ -12,6 +14,7 @@ interface IFormInput {
 }
 
 const SingIn = () => {
+  const dispatch = useAppDispatch();
   const [typePassword, setTypePassword] = useState('password');
   const navigate = useNavigate();
   const showPassword: ChangeEventHandler = () => {
@@ -34,6 +37,7 @@ const SingIn = () => {
       // console.log(password);
       // console.log(objectId);
       console.log('Logged in user', user);
+      dispatch(showHeader(true));
       navigate(PathNavigation.LAYOUT);
       // console.log(user.getUsername());
       // console.log(user.id);
